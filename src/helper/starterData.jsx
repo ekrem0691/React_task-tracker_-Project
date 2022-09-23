@@ -15,7 +15,7 @@ const starterData = [
     id: 3,
     task: 'Attend In-Class',
     day: 'Dec 14th at 3:00pm',
-    isDone: false,
+    isDone: false, 
   },
   {
     id: 4,
