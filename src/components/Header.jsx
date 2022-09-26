@@ -1,54 +1,55 @@
 import AddTaskForm from "./AddTaskForm";
 import { useEffect, useState } from "react";
 
-const Header = () => {
+const Header = ({tasks}) => {
   const [show, setShow] = useState(false);
   const [btnStyle, setBtnStyle] = useState({
     name: "Show Add Task Bar",
     bgColor: "purple",
   });
-
+  console.log(tasks);
+  
   const handleShow = () => {
-    // if (show) {
-    //   setBtnStyle({
-    //     name: "SHOW Add Task Bar",
-    //     bgColor: "purple",
-    //   });
-    // } else {
-    //   setBtnStyle({
-    //     name: "CLOSE Add Task Bar",
-    //     bgColor: "red",
-    //   });
-      
-    // }
-    setShow(!show)
-   
-  };
-
-  useEffect(() => {
-    
     if (show) {
-      
-      setBtnStyle({
-        name: "CLOSE Add Task Bar",
-        bgColor: "red",
-      });
-    
-    } else {
       setBtnStyle({
         name: "SHOW Add Task Bar",
         bgColor: "purple",
       });
-
-    }
-    console.log("false'u gördü")
-  },[show])
+    } else {
+        setBtnStyle({
+          name: "CLOSE Add Task Bar",
+          bgColor: "red",
+        });
+        
+        
+      }
+      setShow(!show)
+  };
+  
+  // useEffect(() => {
+    
+  //   if (show) {
+      
+  //     setBtnStyle({
+  //       name: "CLOSE Add Task Bar",
+  //       bgColor: "red",
+  //     });
+      
+  //   } else {
+  //     setBtnStyle({
+  //       name: "SHOW Add Task Bar",
+  //       bgColor: "purple",
+  //     });
+      
+  //   }
+  //   console.log("false'u gördü")
+  // },[show])
   
   console.log(show);
   
+  
 
-
-
+  
   //! React, default olarak state'leri hemen degistirmeyebilir.
   //! Ekstra render'lari azaltmak icin state'leri toplu (batch) bir sekilde gunceller.
   //! Bir event handler icerisindeki ardasik state'ler event bitiminde toplu bir
@@ -69,7 +70,7 @@ const Header = () => {
       >
        {btnStyle.name}
       </button>
-      {show && <AddTaskForm />}
+      {show && <AddTaskForm tasks = {tasks} />}
     </header>
   );
 };
