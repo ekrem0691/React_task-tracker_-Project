@@ -1,5 +1,5 @@
 const ShowTasks = () => {
-  return <div className="text-center">No Show No Task</div>;
+  return <div className="text-center">Show Task</div>;
 };
 
 export default ShowTasks;

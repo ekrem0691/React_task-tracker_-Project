@@ -12,7 +12,7 @@ const Home = () => {
   
   return (
     <div>
-      <Header tasks = {tasks} />
+      <Header tasks = {tasks} setTasks = {setTasks} />
       <ShowTasks />
     </div>
   ); 
