@@ -1,5 +1,5 @@
 import AddTaskForm from "./AddTaskForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -9,20 +9,40 @@ const Header = () => {
   });
 
   const handleShow = () => {
+    // if (show) {
+    //   setBtnStyle({
+    //     name: "SHOW Add Task Bar",
+    //     bgColor: "purple",
+    //   });
+    // } else {
+    //   setBtnStyle({
+    //     name: "CLOSE Add Task Bar",
+    //     bgColor: "red",
+    //   });
+      
+    // }
+    setShow(!show)
+   
+  };
+
+  useEffect(() => {
+    
     if (show) {
-      setBtnStyle({
-        name: "SHOW Add Task Bar",
-        bgColor: "purple",
-      });
-    } else {
+      
       setBtnStyle({
         name: "CLOSE Add Task Bar",
         bgColor: "red",
       });
-    }
-    setShow(!show);
     
-  };
+    } else {
+      setBtnStyle({
+        name: "SHOW Add Task Bar",
+        bgColor: "purple",
+      });
+
+    }
+    console.log("false'u gördü")
+  },[show])
   
   console.log(show);
   
