@@ -12,6 +12,8 @@ const AddTaskForm = ({tasks, setTasks}) => {
     const id = new Date().getTime();
     const newTask = {id:id, task:task, day:day, isDone:false};
     setTasks([...tasks, newTask])
+    setTask("");
+    setDay("");
 
   } 
 
@@ -28,6 +30,7 @@ const AddTaskForm = ({tasks, setTasks}) => {
             placeholder="add task"
             value={task}
             onChange={(e) => setTask(e.target.value)}
+            required
           />
         </div>
         <div className="form-control">
@@ -39,6 +42,7 @@ const AddTaskForm = ({tasks, setTasks}) => {
             placeholder="Day & Time"
             value={day}
             onChange={(e) => setDay(e.target.value)}
+            required
           />
           <div>
             <button  className="btn btn-submit" type="submit" > Submit </button>
