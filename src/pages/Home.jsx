@@ -20,10 +20,30 @@ const Home = () => {
   //   localStorage.setItem("tasks", JSON.stringify(tasks));
   // }, [tasks]);
 
+
+  //? DELETE TASK
+
+    const deleteTask = (id)=>{
+    console.log("delete-task:", id)
+
+    setTasks(tasks.filter((item) =>{
+      return(
+        item.id !== id
+    )
+    } ))
+
+
+  }
+
+
+
+
+
+
   return (
     <div>
       <Header tasks={tasks} setTasks={setTasks} />
-      <ShowTasks tasks = {tasks} />
+      <ShowTasks deleteTask={deleteTask} tasks = {tasks} />
     </div>
   );
 };
