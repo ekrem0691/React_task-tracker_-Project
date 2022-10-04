@@ -1,22 +1,22 @@
-import React from 'react'
-import {FaTimes} from "react-icons/fa"
+import React from "react";
+import { FaTimes } from "react-icons/fa";
 
-function Duty({ duty, deleteTask }) {
-
+function Duty({ duty, deleteTask, toogleDone }) {
   console.log(duty);
-
+  const { task, day } = duty;
 
   return (
-    <div className='task'>
+    <div className="task" onDoubleClick={() => toogleDone(duty.id)}>
       <h3>
-        {duty.task}
-        <FaTimes onClick={()=>deleteTask(duty.id) } style={{ color: "red", cursor: "pointer" }} />
+        {task}
+        <FaTimes
+          onClick={() => deleteTask(duty.id)}
+          style={{ color: "red", cursor: "pointer" }}
+        />
       </h3>
-      <p>
-        {duty.day}
-      </p>
+      <p>{day}</p>
     </div>
   );
 }
 
-export default Duty
+export default Duty;

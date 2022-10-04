@@ -16,6 +16,7 @@ const Home = () => {
   //! Manuel olarak starterData'dan veriyi çekip state'e atadık..
   const [tasks, setTasks] = useState(data);
 
+
   // useEffect(() => {
   //   localStorage.setItem("tasks", JSON.stringify(tasks));
   // }, [tasks]);
@@ -31,9 +32,13 @@ const Home = () => {
         item.id !== id
     )
     } ))
-
-
   }
+
+  //? TOOGLE DONE
+
+  const toogleDone = (id) => {
+    console.log("double Click", id);
+  };
 
 
 
@@ -43,7 +48,7 @@ const Home = () => {
   return (
     <div>
       <Header tasks={tasks} setTasks={setTasks} />
-      <ShowTasks deleteTask={deleteTask} tasks = {tasks} />
+      <ShowTasks deleteTask={deleteTask} tasks={tasks} toogleDone={toogleDone}  />
     </div>
   );
 };
