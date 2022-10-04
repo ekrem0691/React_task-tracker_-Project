@@ -9,12 +9,12 @@ const AddTaskForm = ({tasks, setTasks}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id = new Date().getTime();
-    const newTask = {id:id, task:task, day:day, isDone:false};
-    setTasks([...tasks, newTask])
+    // const id = new Date().getTime();
+    const newTask = {task:task, day:day, isDone:false};
+    setTasks([newTask, ...tasks])
     setTask("");
     setDay("");
-
+    
   } 
 
 

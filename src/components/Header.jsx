@@ -73,6 +73,6 @@ const Header = ({tasks, setTasks}) => {
       {show && <AddTaskForm tasks = {tasks} setTasks= {setTasks} />}
     </header>
   );
-};
+}; 
 
 export default Header;
