@@ -3,10 +3,10 @@ import { FaTimes } from "react-icons/fa";
 
 function Duty({ duty, deleteTask, toogleDone }) {
   console.log(duty);
-  const { task, day } = duty;
+  const { task, day, isDone } = duty;
 
   return (
-    <div className="task" onDoubleClick={() => toogleDone(duty.id)}>
+    <div className={`"task" ${isDone ? "done" : ""  } `} onDoubleClick={() => toogleDone(duty.id)}>
       <h3>
         {task}
         <FaTimes

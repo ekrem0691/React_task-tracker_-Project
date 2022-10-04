@@ -37,7 +37,16 @@ const Home = () => {
   //? TOOGLE DONE
 
   const toogleDone = (id) => {
-    console.log("double Click", id);
+
+    // console.log("double Click", id);
+
+    setTasks(tasks.map((item) =>{
+      return(
+        item.id === id ? {...item, isDone: !item.isDone}  : item
+      )
+    } ))
+
+
   };
 
 
@@ -46,7 +55,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className="container">
       <Header tasks={tasks} setTasks={setTasks} />
       <ShowTasks deleteTask={deleteTask} tasks={tasks} toogleDone={toogleDone}  />
     </div>
