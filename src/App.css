@@ -96,54 +96,75 @@ body {
   font-size: 1rem;
   border-radius: 5px;
   border: none;
+
+
 }
 
 .btn-submit {
   display: block;
   width: 100%;
   background-color: purple;
-  margin: 2rem 0;
+  margin: 2rem auto;
+  
+  
 }
 
 .task {
   background: #f4f4f4;
-  margin: 0.7rem;
+  margin:1rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 
   
-  
+}
+
+.task p {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .done {
   border-left: 10px solid rgb(102, 18, 77);
   text-decoration: line-through;
-  background-color: rgb(216, 216, 216);
+  background-color: rgb(151, 142, 142);
 }
 
-.task h3 {
+h3 { 
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;}
+
+p{
+  display: flex;
+  justify-content: flex-start;
 }
 
 .text-center {
   text-align: center;
-  margin: 0.7rem;
   cursor: pointer;
-  margin: 5px;
-  padding: 10px 20px;
-  background-color: #f4f4f4;
+  /* margin: 3rem 7.5rem; */
+  /* padding: 10px 0px; */
+  /* background-color: #f4f4f4; */
 
  
 }
 
 
+.form-container{
 
+  width: 100%;
+
+}
+
+.form-container form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 
 

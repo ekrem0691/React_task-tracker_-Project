@@ -57,7 +57,8 @@ const Home = () => {
   return (
     <div className="container">
       <Header tasks={tasks} setTasks={setTasks} />
-      <ShowTasks deleteTask={deleteTask} tasks={tasks} toogleDone={toogleDone}  />
+      { tasks.length > 0 ? (<ShowTasks deleteTask={deleteTask} tasks={tasks} toogleDone={toogleDone}  />) : (<h2 className="text-center" >No Task To Show</h2>) }
+      <p></p>
     </div>
   );
 };

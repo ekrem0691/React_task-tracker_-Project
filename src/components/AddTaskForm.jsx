@@ -19,7 +19,7 @@ const AddTaskForm = ({tasks, setTasks}) => {
 
 
   return (
-    <div>
+    <div className="form-container" >
       <form onSubmit={handleSubmit} >
         <div className="form-control">
           <label htmlFor="task">Task</label>

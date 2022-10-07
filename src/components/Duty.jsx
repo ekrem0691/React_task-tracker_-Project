@@ -6,7 +6,7 @@ function Duty({ duty, deleteTask, toogleDone }) {
   const { task, day, isDone } = duty;
 
   return (
-    <div className={`"task" ${isDone ? "done" : ""  } `} onDoubleClick={() => toogleDone(duty.id)}>
+    <div className={` ${isDone ? "task done" : "task"} `} onDoubleClick={() => toogleDone(duty.id)}>
       <h3>
         {task}
         <FaTimes
